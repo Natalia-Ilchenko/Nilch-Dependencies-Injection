@@ -4,9 +4,10 @@ import type { ApiConfig, User } from '../types';
 export class Users {
   http: HTTP;
   apiConfig: ApiConfig;
+  static $inject: string[];
 
-  constructor(apiConfig: ApiConfig) {
-    this.http = new HTTP(apiConfig);
+  constructor(apiConfig: ApiConfig, http: HTTP) {
+    this.http = http;
     this.apiConfig = apiConfig;
   }
 
