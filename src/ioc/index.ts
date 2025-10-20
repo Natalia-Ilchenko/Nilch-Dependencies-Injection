@@ -5,14 +5,8 @@ import { HTTP } from '../services/http';
 import { Users } from '../services/users';
 import { ApiConfig } from '../types/index';
 
-export const config: ApiConfig = {
-  path: 'http://localhost:8080/api',
-  resources: {
-    users: '/users',
-  }
-};
 
-export const createIoCContainer = () =>  {
+export const createIoCContainer = (config: ApiConfig) =>  {
   const ioc = new IoCContainer();
   // you can register some resources right now below...
 
