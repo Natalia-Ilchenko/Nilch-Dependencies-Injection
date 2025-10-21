@@ -6,13 +6,11 @@ import { Users } from '../services/users';
 import { ApiConfig } from '../types/index';
 
 
-export const createIoCContainer = (config: ApiConfig) =>  {
+export const createIoCContainer = () =>  {
   const ioc = new IoCContainer();
   // you can register some resources right now below...
 
   ioc.registerClass('logger', Logger);
-
-  ioc.register('config', config);
 
   HTTP.$inject = ['logger', 'config'];
   ioc.registerClass('http', HTTP);
